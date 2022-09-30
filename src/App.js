@@ -38,32 +38,40 @@ function App() {
 									{JSON.stringify(card.name)}
 								</p>
 								<p>
-									<span>Type: </span>
+									<span>Card type: </span>
 									{JSON.stringify(card.type)}
 								</p>
 								<p>
-									<span>Effect: </span>
-									{JSON.stringify(card.desc)}
+									<span>Type: </span>
+									{JSON.stringify(card.race)}
 								</p>
-
-								{JSON.stringify(card.atk) !== undefined ? (
+								{JSON.stringify(card.type).includes("Monster") ? (
 									<>
 										<p>
-											<span>ATK: </span>
-											{JSON.stringify(card.atk)}
-											<span> / DEF: </span>
-											{JSON.stringify(card.def)}
+											<span>Attribute: </span>
+											{JSON.stringify(card.attribute)}
 										</p>
+
 										<p>
 											<span>Level: </span>
 											{JSON.stringify(card.level)}
 											&nbsp;
 											<img src="starImg.png" alt="monster card level" />
 										</p>
+										<p>
+											<span>ATK: </span>
+											{JSON.stringify(card.atk)}
+											<span> / DEF: </span>
+											{JSON.stringify(card.def)}
+										</p>
 									</>
 								) : (
 									<></>
 								)}
+								<p>
+									<span>Effect: </span>
+									{JSON.stringify(card.desc)}
+								</p>
 							</div>
 						);
 					})
@@ -71,6 +79,23 @@ function App() {
 					<div className="error">There are no cards with that name!</div>
 				)}
 			</div>
+			<footer className="footer">
+				<div className="footer__item">
+					<span>&nbsp;Page Author:&nbsp;</span>
+					<br />
+					Max Marschhauser
+				</div>
+				<div className="footer__item">
+					<span>&nbsp;Yu-Gi-Oh! search database!&nbsp;</span>
+					<br />
+					Copyright &copy;{+new Date().getFullYear()}.
+				</div>
+				<div className="footer__item">
+					<span>&nbsp;e-mail:&nbsp;</span>
+					<br />
+					max.marschhauser@gmail.com
+				</div>
+			</footer>
 		</>
 	);
 }

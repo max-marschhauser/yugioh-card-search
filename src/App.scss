@@ -21,6 +21,7 @@ body {
 }
 
 .card {
+	position: relative;
 	padding: 1rem;
 	outline: 0.1rem solid black;
 	color: hsl(0, 0%, 70%);
@@ -31,6 +32,8 @@ body {
 		height: 1rem;
 		position: absolute;
 	}
+	height: 25rem;
+	overflow-y: auto;
 }
 
 .monsterCard {
@@ -64,4 +67,27 @@ h1 {
 	width: 100vw;
 	text-align: center;
 	color: lightgray;
+}
+
+.footer {
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(3, 1fr);
+
+	height: 20vh;
+
+	background-color: black;
+	color: white;
+	text-align: center;
+
+	&__item {
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		letter-spacing: 0.1rem;
+	}
+
+	::selection {
+		background: white;
+
+		color: black;
+	}
 }
