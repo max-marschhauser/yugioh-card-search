@@ -56,7 +56,7 @@ function App() {
 											<span>Level: </span>
 											{JSON.stringify(card.level)}
 											&nbsp;
-											<img src="starImg.png" alt="monster card level" />
+											<img src="monsterLevelImg.png" alt="monster card level" />
 										</p>
 										<p>
 											<span>ATK: </span>
