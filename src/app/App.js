@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
-import "./App.scss";
+import "./assets/styles.scss";
 import axios from "axios";
-import Loading from "./Loading";
-import Footer from "./Footer";
-import DisplayCards from "./DisplayCards";
+import Loading from "./components/LoadingSpinner";
+import Footer from "./components/Footer";
+import DisplayCards from "./components/DisplayCards";
 
 function App() {
 	const [searchName, setSearchName] = useState("Toon");
 	const [items, setItems] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [urlLink, setUrlLink] = useState(`https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${searchName}`);
 
 	useEffect(() => {
 		setLoading(true);
-		axios.get(urlLink).then((response) => {
+		axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${searchName}`).then((response) => {
 			setLoading(false);
 			setItems(response.data.data);
 		});

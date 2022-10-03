@@ -1,0 +1,16 @@
+@use "../abstracts" as abs;
+
+body {
+	background-color: hsl(0, 0%, 30%);
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+::selection {
+	color: var(--color-white);
+	background: var(--color-black);
+}

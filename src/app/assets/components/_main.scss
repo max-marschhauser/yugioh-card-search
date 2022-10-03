@@ -1,20 +1,11 @@
-body {
-	background-color: hsl(0, 0%, 30%);
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	overflow-x: hidden;
-}
-
-.heading {
-	width: 100vw;
-	text-align: center;
-}
+@use "../abstracts" as abs;
 
 .container {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
+
+	min-height: 60vh;
 
 	margin: 2rem;
 	padding: 2rem;
@@ -67,27 +58,4 @@ h1 {
 	width: 100vw;
 	text-align: center;
 	color: lightgray;
-}
-
-.footer {
-	display: grid;
-	place-items: center;
-	grid-template-columns: repeat(3, 1fr);
-
-	height: 20vh;
-
-	background-color: black;
-	color: white;
-	text-align: center;
-
-	&__item {
-		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-		letter-spacing: 0.1rem;
-	}
-
-	::selection {
-		background: white;
-
-		color: black;
-	}
 }

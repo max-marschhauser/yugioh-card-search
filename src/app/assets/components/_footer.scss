@@ -1,0 +1,24 @@
+@use "../abstracts" as abs;
+
+.footer {
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(3, 1fr);
+
+	height: 20vh;
+
+	background-color: black;
+	color: white;
+	text-align: center;
+
+	&__item {
+		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		letter-spacing: 0.1rem;
+	}
+
+	::selection {
+		background: white;
+
+		color: black;
+	}
+}
