@@ -14,8 +14,8 @@
 .card {
 	position: relative;
 	padding: 1rem;
-	outline: 0.1rem solid black;
-	color: hsl(0, 0%, 70%);
+	outline: 0.1rem solid var(--color-black);
+	color: var(--color-lightgray);
 	span {
 		font-weight: bold;
 	}
@@ -28,15 +28,15 @@
 }
 
 .monsterCard {
-	background-color: hsl(20, 100%, 25%);
+	background-color: var(--color-primary-monster);
 }
 
 .spellCard {
-	background-color: hsl(160, 100%, 25%);
+	background-color: var(--color-primary-spell);
 }
 
 .trapCard {
-	background-color: hsl(334, 40%, 25%);
+	background-color: var(--color-primary-trap);
 }
 
 input {
@@ -46,7 +46,7 @@ input {
 	width: 20vw;
 	height: 2rem;
 	font-size: 1.5rem;
-	background-color: hsl(0, 0%, 70%);
+	background-color: var(--color-lightgray);
 }
 
 .error {
@@ -57,5 +57,5 @@ input {
 h1 {
 	width: 100vw;
 	text-align: center;
-	color: lightgray;
+	color: var(--color-lightgray);
 }

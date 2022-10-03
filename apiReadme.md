@@ -1,4 +1,3 @@
-fname=dark magician
 sort=atk
 level=4
 sort=name

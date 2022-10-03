@@ -1,14 +1,11 @@
 .loading--container {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 	display: grid;
 	place-items: center;
 
-	height: 100vh;
+	height: 90vh;
 	cursor: default;
 
-	background-color: hsl(0, 0%, 30%);
+	background-color: var(--color-gray);
 }
 
 .spinner {
@@ -24,12 +21,12 @@
 	font-size: 2rem;
 	overflow: hidden;
 
-	animation-timing-function: ease-in-out;
 	animation-name: text-color;
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-fill-mode: forwards;
 	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
 }
 
 .spinner__sector {
@@ -38,27 +35,27 @@
 	height: 80%;
 	border-radius: 50%;
 	border: 1rem solid transparent;
-	mix-blend-mode: difference;
-	animation: rotate var(--duration) var(--timing) infinite;
+
+	animation: rotate var(--duration) var(--timing-function) infinite;
 	pointer-events: none;
 }
 
 .spinner__sector--red {
-	border-top-color: hsl(0, 100%, 50%);
-	--duration: 2s;
-	--timing: ease-in-out;
+	border-top-color: var(--color-primary-monster);
+	--duration: 2.5s;
+	--timing-function: ease;
 }
 
 .spinner__sector--green {
-	border-top-color: hsl(120, 100%, 50%);
-	--duration: 1.5s;
-	--timing: ease-in;
+	border-top-color: var(--color-primary-spell);
+	--duration: 2s;
+	--timing-function: linear;
 }
 
 .spinner__sector--blue {
-	border-top-color: hsl(195, 100%, 50%);
-	--duration: 2.5s;
-	--timing: ease-out;
+	border-top-color: var(--color-primary-trap);
+	--duration: 1.5s;
+	--timing-function: ease-in-out;
 }
 
 @keyframes rotate {
@@ -73,10 +70,10 @@
 
 @keyframes text-color {
 	0% {
-		color: hsla(0, 0%, 100%, 0.1);
+		color: var(--color-lightgray);
 	}
 
 	100% {
-		color: hsla(0, 0%, 100%, 1);
+		color: var(--color-black);
 	}
 }

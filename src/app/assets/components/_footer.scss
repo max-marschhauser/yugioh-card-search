@@ -5,20 +5,23 @@
 	place-items: center;
 	grid-template-columns: repeat(3, 1fr);
 
-	height: 20vh;
+	padding-block: 4rem;
 
-	background-color: black;
-	color: white;
+	background-color: var(--color-black);
+
+	color: var(--color-white);
 	text-align: center;
+	font-size: 1.25rem;
+	line-height: 2rem;
+	font-weight: lighter;
 
-	&__item {
-		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-		letter-spacing: 0.1rem;
+	span {
+		font-weight: bold;
 	}
 
 	::selection {
-		background: white;
+		background: var(--color-white);
 
-		color: black;
+		color: var(--color-black);
 	}
 }

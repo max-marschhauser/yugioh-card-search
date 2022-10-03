@@ -1,16 +1,27 @@
 @use "../abstracts" as abs;
 
-body {
-	background-color: hsl(0, 0%, 30%);
+:root {
+	--color-gray: hsl(0, 0%, 30%);
+	--color-lightgray: hsl(0, 0%, 70%);
+	--color-white: hsl(0, 0%, 100%);
+	--color-black: hsl(0, 0%, 0%);
+	--color-primary-monster: hsl(20, 100%, 25%);
+	--color-primary-spell: hsl(160, 100%, 25%);
+	--color-primary-trap: hsl(334, 40%, 25%);
+
+	font-family: "Montserrat", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	outline: 0;
 	border: 0;
-	box-sizing: border-box;
-	overflow-x: hidden;
 }
 
-::selection {
-	color: var(--color-white);
-	background: var(--color-black);
+body {
+	background-color: var(--color-gray);
+
+	//overflow-x: hidden;
 }

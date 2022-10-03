@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "./assets/styles.scss";
 import axios from "axios";
-import Loading from "./components/LoadingSpinner";
-import Footer from "./components/Footer";
+import Footer from "./layout/Footer";
+import Header from "./layout/Header";
+import LoadingSpinner from "./components/LoadingSpinner";
 import DisplayCards from "./components/DisplayCards";
 
 function App() {
@@ -20,12 +21,11 @@ function App() {
 
 	return (
 		<>
-			<h1>Search Yu-Gi-Oh cards by their names!</h1>
+			<Header />
 			<div>
 				<input type="text" placeholder={searchName} onChange={(e) => setSearchName(e.target.value)} />
 			</div>
-
-			{loading ? <Loading /> : <DisplayCards items={items} />}
+			{loading ? <LoadingSpinner /> : <DisplayCards items={items} />}
 			<Footer />
 		</>
 	);
