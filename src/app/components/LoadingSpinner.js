@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Loading() {
 	return (
-		<div className="loading--container">
+		<div className="container--loading">
 			<div className="spinner">
 				Loading...
 				<div className="spinner__sector spinner__sector--red"></div>

@@ -5,22 +5,24 @@
 	place-items: center;
 	grid-template-columns: repeat(3, 1fr);
 
-	padding-block: 4rem;
+	min-height: 10vh;
 
 	background-color: var(--color-black);
 
-	color: var(--color-white);
+	color: var(--color-lightgray);
 	text-align: center;
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	line-height: 2rem;
 	font-weight: lighter;
+
+	cursor: default;
 
 	span {
 		font-weight: bold;
 	}
 
 	::selection {
-		background: var(--color-white);
+		background: var(--color-lightgray);
 
 		color: var(--color-black);
 	}

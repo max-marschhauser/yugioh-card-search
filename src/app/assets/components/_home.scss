@@ -1,0 +1,76 @@
+@use "../abstracts" as abs;
+
+.hero {
+	::selection {
+		background: var(--color-lightgray);
+
+		color: var(--color-black);
+	}
+
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+
+	&__item {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+
+	img {
+		border-radius: 2rem;
+
+		user-select: none;
+	}
+
+	div {
+		background-color: var(--color-black);
+		opacity: 0.8;
+		padding: 2rem 6rem;
+	}
+
+	h1,
+	p {
+		color: var(--color-white);
+		padding-block: 0.5rem;
+
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
+	p {
+		opacity: 0;
+
+		font-size: 1.2rem;
+
+		animation-name: showText;
+		animation-timing-function: ease;
+		animation-duration: 1s;
+		animation-delay: var(--delay);
+		animation-fill-mode: forwards;
+
+		&:nth-child(2) {
+			--delay: 1s;
+		}
+
+		&:nth-child(3) {
+			--delay: 2.5s;
+		}
+
+		&:nth-child(4) {
+			--delay: 4s;
+		}
+	}
+
+	@keyframes showText {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}

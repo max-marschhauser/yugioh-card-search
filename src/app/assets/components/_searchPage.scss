@@ -1,0 +1,51 @@
+@use "../abstracts" as abs;
+
+.container--filter {
+}
+
+input {
+	width: 20vw;
+	height: 2rem;
+
+	background-color: var(--color-lightgray);
+
+	color: var(--color-black);
+	font-size: 1.5rem;
+}
+
+.container--search {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+
+	margin: 2rem;
+	padding: 2rem;
+}
+
+.card {
+	position: relative;
+	padding: 1rem;
+	outline: 0.1rem solid var(--color-black);
+	color: var(--color-lightgray);
+	span {
+		font-weight: bold;
+	}
+	img {
+		height: 1rem;
+		position: absolute;
+	}
+	height: 25rem;
+	overflow-y: auto;
+}
+
+.monsterCard {
+	background-color: var(--color-primary-monster);
+}
+
+.spellCard {
+	background-color: var(--color-primary-spell);
+}
+
+.trapCard {
+	background-color: var(--color-primary-trap);
+}

@@ -1,11 +1,14 @@
-.loading--container {
+@use "../abstracts" as abs;
+
+.container--loading {
 	display: grid;
 	place-items: center;
 
-	height: 90vh;
-	cursor: default;
+	min-height: 60vh;
 
 	background-color: var(--color-gray);
+
+	cursor: default;
 }
 
 .spinner {

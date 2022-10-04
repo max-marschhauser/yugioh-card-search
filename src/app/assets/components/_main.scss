@@ -1,61 +1,16 @@
 @use "../abstracts" as abs;
 
-.container {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 2rem;
-
-	min-height: 60vh;
-
-	margin: 2rem;
-	padding: 2rem;
-}
-
-.card {
-	position: relative;
+.container--page {
+	min-height: 80vh;
 	padding: 1rem;
-	outline: 0.1rem solid var(--color-black);
-	color: var(--color-lightgray);
-	span {
-		font-weight: bold;
-	}
-	img {
-		height: 1rem;
-		position: absolute;
-	}
-	height: 25rem;
-	overflow-y: auto;
+
+	display: grid;
+	place-items: center;
 }
 
-.monsterCard {
-	background-color: var(--color-primary-monster);
-}
-
-.spellCard {
-	background-color: var(--color-primary-spell);
-}
-
-.trapCard {
-	background-color: var(--color-primary-trap);
-}
-
-input {
-	position: relative;
-	top: 1rem;
-	left: 40vw;
-	width: 20vw;
-	height: 2rem;
-	font-size: 1.5rem;
-	background-color: var(--color-lightgray);
-}
-
-.error {
-	font-size: 2rem;
+.noPageText {
+	font-size: 1.75rem;
 	font-weight: bold;
-}
-
-h1 {
-	width: 100vw;
 	text-align: center;
 	color: var(--color-lightgray);
 }
