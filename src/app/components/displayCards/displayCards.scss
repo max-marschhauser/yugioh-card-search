@@ -1,0 +1,27 @@
+.card {
+	position: relative;
+	padding: 1rem;
+	outline: 0.1rem solid var(--color-black);
+	color: var(--color-lightgray);
+	span {
+		font-weight: bold;
+	}
+	img {
+		height: 1rem;
+		position: absolute;
+	}
+	height: 25rem;
+	overflow-y: auto;
+}
+
+.monsterCard {
+	background-color: var(--color-primary-monster);
+}
+
+.spellCard {
+	background-color: var(--color-primary-spell);
+}
+
+.trapCard {
+	background-color: var(--color-primary-trap);
+}

@@ -5,10 +5,14 @@ import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import DisplayCards from "../../components/displayCards/DisplayCards";
 import "./search.scss";
 
+let searchForTypes = [];
+
 export default function Search() {
 	const [searchName, setSearchName] = useState("Toon");
-	const [type, setType] = useState("");
-	let searchForTypes = [];
+	const [effectSearch, setEffectSearch] = useState("toon world");
+	const [type, setType] = useState(
+		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
+	);
 	const [sort, setSort] = useState("name");
 	const [items, setItems] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -20,10 +24,16 @@ export default function Search() {
 			.then((response) => {
 				setLoading(false);
 				setItems(response.data.data);
+			})
+			.catch(() => {
+				alert("There is no such card in database");
+				setSearchName("");
 			});
 	}, [searchName, sort, type]);
 
 	function changeSearchType(searchValue) {
+		let searchText = "";
+
 		if (searchForTypes.includes(searchValue)) {
 			const index = searchForTypes.indexOf(searchValue);
 			if (index > -1) {
@@ -35,25 +45,27 @@ export default function Search() {
 
 		console.log(searchForTypes);
 
-		let searchText = "";
-		if (searchForTypes === []) {
-			setType("");
+		if (searchForTypes.length === 0) {
+			searchText =
+				"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&";
 		}
-		/*
-		searchText += "type=";
-		if (searchForTypes.includes("spell card")) {
-			searchText += "spell card";
+		if (searchForTypes.length === 1) {
+			searchText = `type=${searchForTypes[0]}&`;
 		}
-		if (searchForTypes.includes("trap card")) {
-			searchText += "trap card";
+		if (searchForTypes.length === 2) {
+			searchText = `type=${searchForTypes[0]},${searchForTypes[1]}&`;
 		}
-		if (searchForTypes.includes("monster")) {
-			searchText +=
-				"Effect Monster,Flip Effect Monster,Gemini Monster,Normal Monster,Ritual Effect Monster,Ritual Monster,Spirit Monster,Toon Monster,Union Effect Monster,Fusion Monster";
+		if (searchForTypes.length === 3) {
+			searchText = `type=${searchForTypes[0]},${searchForTypes[1]},${searchForTypes[2]}&`;
 		}
-		searchText += "&";
+		if (searchForTypes.length === 4) {
+			searchText = `type=${searchForTypes[0]},${searchForTypes[1]},${searchForTypes[2]},${searchForTypes[3]}&`;
+		}
+		if (searchForTypes.length === 5) {
+			searchText = `type=${searchForTypes[0]},${searchForTypes[1]},${searchForTypes[2]},${searchForTypes[3]},${searchForTypes[4]}&`;
+		}
 
-		setType(searchText);*/
+		setType(searchText);
 	}
 
 	return (
@@ -65,8 +77,16 @@ export default function Search() {
 						type="text"
 						id="cardName"
 						name="cardName"
-						placeholder={searchName}
+						value={searchName}
 						onChange={(e) => setSearchName(e.target.value)}
+					/>
+					<label htmlFor="effectText">Effect text:</label>
+					<input
+						type="text"
+						id="effectText"
+						name="effectText"
+						value={effectSearch}
+						onChange={(e) => setEffectSearch(e.target.value)}
 					/>
 				</div>
 				<fieldset>
@@ -99,7 +119,7 @@ export default function Search() {
 							value="Ritual Effect Monster,Ritual Monster,Fusion Monster"
 							onChange={(e) => changeSearchType(e.target.value)}
 						/>
-						<label htmlFor="ritualFusionMonster">Ritual Fusion Monster</label>
+						<label htmlFor="ritualFusionMonster">Ritual/Fusion Monster</label>
 					</div>
 					<div>
 						<input
@@ -166,7 +186,9 @@ export default function Search() {
 					</div>
 				</fieldset>
 			</form>
-			<div className="container--search">{loading ? <LoadingSpinner /> : <DisplayCards items={items} />}</div>
+			<div className="container--search">
+				{loading ? <LoadingSpinner /> : <DisplayCards items={items} effectSearch={effectSearch} />}
+			</div>
 		</>
 	);
 }
