@@ -1,8 +1,8 @@
 @use "../abstracts" as abs;
 
 :root {
-	--color-gray: hsl(0, 0%, 30%);
-	--color-lightgray: hsl(0, 0%, 70%);
+	--color-gray: hsl(0, 0%, 75%);
+	--color-lightgray: hsl(0, 0%, 90%);
 	--color-white: hsl(0, 0%, 100%);
 	--color-black: hsl(0, 0%, 0%);
 	--color-primary-monster: hsl(20, 100%, 25%);
@@ -23,5 +23,5 @@
 }
 
 body {
-	background-color: var(--color-gray);
+	background-color: var(--color-lightgray);
 }
