@@ -1,22 +1,23 @@
-input {
-	width: 20vw;
-	height: 2rem;
+.container--filter {
+	background-color: green;
 
-	background-color: var(--color-lightgray);
+	input {
+		width: 20vw;
+		height: 2rem;
 
-	color: var(--color-black);
-	font-size: 1.5rem;
+		background-color: var(--color-white);
+
+		color: var(--color-black);
+		font-size: 1.5rem;
+	}
 }
 
 .container--search {
-	height: 65vh;
+	background-color: yellow;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
-
-	margin: 2rem;
-	padding: 2rem;
 }
 /*
 .card {
