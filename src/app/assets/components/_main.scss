@@ -1,16 +1,8 @@
-@use "../abstracts" as abs;
-
 .container--page {
 	min-height: 80vh;
 	padding: 1rem;
+	width: 100vw;
 
 	display: grid;
 	place-items: center;
-}
-
-.noPageText {
-	font-size: 1.75rem;
-	font-weight: bold;
-	text-align: center;
-	color: var(--color-lightgray);
 }

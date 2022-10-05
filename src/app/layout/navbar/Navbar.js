@@ -1,7 +1,8 @@
 import { Outlet, NavLink } from "react-router-dom";
-import Footer from "../layout/Footer";
+import Footer from "../footer/Footer";
+import "./navbar.scss";
 
-const Layout = () => {
+const Navbar = () => {
 	return (
 		<>
 			<nav className="navbar">
@@ -17,4 +18,4 @@ const Layout = () => {
 	);
 };
 
-export default Layout;
+export default Navbar;

@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import Deck from "./pages/Deck";
-import NoPage from "./pages/NoPage";
+import Navbar from "./layout//navbar/Navbar";
+import Home from "./pages/home/Home";
+import Search from "./pages/search/Search";
+import Deck from "./pages/deck/Deck";
+import NoPage from "./pages/noPage/NoPage";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Layout />}>
+				<Route path="/" element={<Navbar />}>
 					<Route index element={<Home />} />
 					<Route path="/search" element={<Search />} />
 					<Route path="/deck" element={<Deck />} />

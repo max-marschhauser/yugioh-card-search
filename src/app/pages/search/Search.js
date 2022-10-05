@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingSpinner from "../components/LoadingSpinner";
-import DisplayCards from "../components/DisplayCards";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import DisplayCards from "../../components/DisplayCards";
+import "./search.scss";
 
 export default function Search() {
 	const [searchName, setSearchName] = useState("Toon");
@@ -19,10 +20,12 @@ export default function Search() {
 
 	return (
 		<>
-			<div className="container--filter">
-				<input type="text" placeholder={searchName} onChange={(e) => setSearchName(e.target.value)} />
+			<div className="container--page">
+				<div className="container--filter">
+					<input type="text" placeholder={searchName} onChange={(e) => setSearchName(e.target.value)} />
+				</div>
+				<div className="container--search">{loading ? <LoadingSpinner /> : <DisplayCards items={items} />}</div>
 			</div>
-			<div className="container--search">{loading ? <LoadingSpinner /> : <DisplayCards items={items} />}</div>
 		</>
 	);
 }
