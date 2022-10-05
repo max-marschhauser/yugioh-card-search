@@ -1,9 +1,24 @@
 .container--filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+
+	min-height: 10vh;
+
 	background-color: green;
 
+	label {
+		margin: 0.5rem;
+
+		font-size: 1.5rem;
+	}
+
 	input {
-		width: 20vw;
+		width: 15rem;
 		height: 2rem;
+		margin: 0.5rem;
+		padding-inline: 0.25rem;
 
 		background-color: var(--color-white);
 
@@ -13,13 +28,14 @@
 }
 
 .container--search {
-	background-color: yellow;
+	min-height: 70vh;
+	background-color: lightblue;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
 }
-/*
+
 .card {
 	position: relative;
 	padding: 1rem;
@@ -47,4 +63,3 @@
 .trapCard {
 	background-color: var(--color-primary-trap);
 }
-*/

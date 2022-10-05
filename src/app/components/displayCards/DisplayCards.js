@@ -1,9 +1,8 @@
 import React from "react";
 
 export default function DisplayCards({ items }) {
-	return <div>CARDS</div>;
-	/*return (
-		<div className="container">
+	return (
+		<>
 			{items.map((card) => {
 				return (
 					<div
@@ -58,6 +57,6 @@ export default function DisplayCards({ items }) {
 					</div>
 				);
 			})}
-		</div>
-	);*/
+		</>
+	);
 }
