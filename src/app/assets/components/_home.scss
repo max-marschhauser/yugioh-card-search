@@ -16,11 +16,15 @@
 	}
 
 	img {
-		user-select: none;
 		height: 100%;
+		box-shadow: 0 0 0.2rem 0.2rem var(--color-black);
+
+		user-select: none;
 	}
 
 	div {
+		box-shadow: 0 0 0.2rem 0.2rem var(--color-white) inset;
+
 		background-color: var(--color-black);
 		opacity: 0.8;
 		padding: 2rem 6rem;
