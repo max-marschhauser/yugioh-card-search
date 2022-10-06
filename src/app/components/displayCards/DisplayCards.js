@@ -1,14 +1,16 @@
 import React from "react";
 import "./displayCards.scss";
 
-export default function DisplayCards({ items, effectSearch }) {
+export default function DisplayCards({ items, effectRaceSearch }) {
 	return (
 		<>
 			{items.map((card) => {
 				let cardEffect = card.desc.toUpperCase();
-				let keyWord = effectSearch.toUpperCase();
+				let cardRace = card.race.toUpperCase();
 
-				if (cardEffect.includes(keyWord)) {
+				let keyWord = effectRaceSearch.toUpperCase();
+
+				if (cardEffect.includes(keyWord) || cardRace.includes(keyWord)) {
 					return (
 						<div
 							key={card.id}
@@ -22,13 +24,9 @@ export default function DisplayCards({ items, effectSearch }) {
 									: "card"
 							}>
 							<p>
-								<span>Name: </span>
-								{JSON.stringify(card.name)}
+								<b>{JSON.stringify(card.name)}</b>
 							</p>
-							<p>
-								<span>Card type: </span>
-								{JSON.stringify(card.type)}
-							</p>
+							<p>{JSON.stringify(card.type)}</p>
 							<p>
 								<span>Type: </span>
 								{JSON.stringify(card.race)}

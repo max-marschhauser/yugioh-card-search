@@ -1,12 +1,13 @@
 @use "../abstracts" as abs;
 
 :root {
-	--color-gray: hsl(0, 0%, 75%);
+	--color-gray: hsl(0, 0%, 30%);
 	--color-lightgray: hsl(0, 0%, 90%);
 	--color-white: hsl(0, 0%, 100%);
 	--color-black: hsl(0, 0%, 0%);
+
 	--color-primary-monster: hsl(20, 100%, 25%);
-	--color-primary-spell: hsl(160, 100%, 25%);
+	--color-primary-spell: hsl(120, 70%, 50%);
 	--color-primary-trap: hsl(334, 40%, 25%);
 
 	font-family: "Montserrat", sans-serif;
@@ -20,8 +21,6 @@
 	padding: 0;
 	outline: 0;
 	border: 0;
-
-	overflow-x: hidden;
 }
 
 body {

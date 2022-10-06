@@ -1,37 +1,73 @@
 .container--filter {
+	position: sticky;
+	z-index: 1;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 
-	min-height: 10vh;
+	padding-block: 0.5rem;
 
-	background-color: green;
+	background-color: var(--color-gray);
+
+	&--column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&--fieldset {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5rem;
+	}
 
 	label {
-		margin: 0.5rem;
+		font-size: 1.2rem;
+		color: var(--color-lightgray);
+
+		cursor: pointer;
+	}
+
+	legend {
+		padding-bottom: 0.5rem;
 
 		font-size: 1.5rem;
+		text-align: center;
+		color: var(--color-lightgray);
+
+		cursor: default;
 	}
 
 	input {
-		width: 15rem;
-		height: 2rem;
+		max-width: 20rem;
 		margin: 0.5rem;
-		padding-inline: 0.25rem;
+		padding: 0.25rem;
 
-		background-color: var(--color-white);
+		background-color: var(--color-lightgray);
+		caret-color: var(--color-primary-spell);
+		accent-color: var(--color-primary-spell);
 
 		color: var(--color-black);
 		font-size: 1.5rem;
+
+		&[type="checkbox"],
+		&[type="radio"] {
+			cursor: pointer;
+		}
 	}
 }
 
 .container--search {
-	min-height: 70vh;
-	background-color: lightblue;
+	min-height: 60.1vh;
+	background-color: var(--color-lightgray);
+
+	padding: 1rem;
 
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 2rem;
+	place-items: center;
+	gap: 1rem;
 }
