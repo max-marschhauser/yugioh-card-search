@@ -2,13 +2,13 @@ import React from "react";
 import "./displayCards.scss";
 
 export default function DisplayCards({ items, effectRaceSearch }) {
+	let keyWord = effectRaceSearch.toUpperCase();
+
 	return (
 		<>
 			{items.map((card) => {
 				let cardEffect = card.desc.toUpperCase();
 				let cardRace = card.race.toUpperCase();
-
-				let keyWord = effectRaceSearch.toUpperCase();
 
 				if (cardEffect.includes(keyWord) || cardRace.includes(keyWord)) {
 					return (
