@@ -2,7 +2,6 @@ import React from "react";
 import "./displayCards.scss";
 
 export default function DisplayCards({ items, effectRaceSearch }) {
-	console.log(items.length);
 	return (
 		<>
 			{items.map((card) => {
@@ -58,7 +57,7 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 									<p>
 										<b>ATK: </b>
 										{JSON.stringify(card.atk)}
-										<b> / DEF: </b>
+										<b>/ DEF: </b>
 										{JSON.stringify(card.def)}
 									</p>
 								</>
