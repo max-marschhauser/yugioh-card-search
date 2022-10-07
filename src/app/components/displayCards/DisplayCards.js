@@ -1,8 +1,19 @@
 import React from "react";
 import "./displayCards.scss";
 
+let deck = [];
+
 export default function DisplayCards({ items, searchWord }) {
 	let keyWord = searchWord.toUpperCase();
+	const LOCAL_STORAGE_KEY = "myDeck";
+
+	function addToDeck(card) {
+		let parent = card.target.parentElement;
+		let name = parent.querySelector("[data-id]");
+		let cardId = parseInt(name.dataset.id);
+		deck.push(cardId);
+		localStorage.setItem(LOCAL_STORAGE_KEY, deck);
+	}
 
 	return (
 		<>
@@ -35,7 +46,9 @@ export default function DisplayCards({ items, searchWord }) {
 									? "card monsterCardEffect"
 									: "card"
 							}>
-							<header className="card__title">{JSON.stringify(card.name)}</header>
+							<header className="card__title" data-id={card.id}>
+								{JSON.stringify(card.name)}
+							</header>
 							<p className="card__type">{JSON.stringify(card.type)}</p>
 							<p className="card__item">
 								<b>Type: </b>
@@ -71,7 +84,9 @@ export default function DisplayCards({ items, searchWord }) {
 								<b>Card text: </b>
 								{JSON.stringify(card.desc)}
 							</p>
-							<button className="card__button">Add to deck</button>
+							<button className="card__button" onClick={addToDeck}>
+								Add to deck
+							</button>
 						</div>
 					);
 				} else {

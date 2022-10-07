@@ -37,6 +37,10 @@
 		cursor: pointer;
 	}
 
+	.noPointer {
+		cursor: default;
+	}
+
 	legend {
 		padding-bottom: 0.5rem;
 

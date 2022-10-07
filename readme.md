@@ -1,20 +1,15 @@
--   database page
-
-    -   style cards to look more like real life
-
 -   add deck page
 
-    -   create and save deck (local storage)
     -   draw random hand
-    -   add/remove cards to/from deck
+    -   remove cards from deck
     -   deck price and buy cards
 
 local storage and useEffect
-const LOCAL_STORAGE_KEY = "todoApp.todos"
-useEffect(() => {
-localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos)),
-}, [todos])
-useEffect(() =>
-const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-if (storedTodos) setTodos(storedTodos)
-}, [])
+
+To use localStorage in your web applications, there are five methods to choose from:
+
+setItem(): Add key and value to localStorage
+getItem(): This is how you get items from localStorage
+removeItem(): Remove an item by key from localStorage
+clear(): Clear all localStorage
+key(): Passed a number to retrieve the key of a localStorage

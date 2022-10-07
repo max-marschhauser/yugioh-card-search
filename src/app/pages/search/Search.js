@@ -9,7 +9,6 @@ let searchForTypes = [];
 
 export default function Search() {
 	const [searchWord, setSearchWord] = useState("");
-
 	const [type, setType] = useState(
 		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
 	);
@@ -76,7 +75,9 @@ export default function Search() {
 		<>
 			<form className="container--filter">
 				<div className="container--filter--column">
-					<label htmlFor="searchWord">Name / Card effect / Card type:</label>
+					<label className="noPointer" htmlFor="searchWord">
+						Name / Card effect / Card type:
+					</label>
 					<input
 						type="text"
 						id="searchWord"
