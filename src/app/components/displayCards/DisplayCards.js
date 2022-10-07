@@ -1,16 +1,17 @@
 import React from "react";
 import "./displayCards.scss";
 
-export default function DisplayCards({ items, effectRaceSearch }) {
-	let keyWord = effectRaceSearch.toUpperCase();
+export default function DisplayCards({ items, searchWord }) {
+	let keyWord = searchWord.toUpperCase();
 
 	return (
 		<>
 			{items.map((card) => {
 				let cardEffect = card.desc.toUpperCase();
 				let cardRace = card.race.toUpperCase();
+				let cardName = card.name.toUpperCase();
 
-				if (cardEffect.includes(keyWord) || cardRace.includes(keyWord)) {
+				if (cardEffect.includes(keyWord) || cardRace.includes(keyWord) || cardName.includes(keyWord)) {
 					return (
 						<div
 							key={card.id}
@@ -34,27 +35,29 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 									? "card monsterCardEffect"
 									: "card"
 							}>
-							<p>
-								<b>{JSON.stringify(card.name)}</b>
-							</p>
-							<p>{JSON.stringify(card.type)}</p>
-							<p>
+							<header className="card__title">{JSON.stringify(card.name)}</header>
+							<p className="card__type">{JSON.stringify(card.type)}</p>
+							<p className="card__item">
 								<b>Type: </b>
 								{JSON.stringify(card.race)}
 							</p>
 							{JSON.stringify(card.type).includes("Monster") ? (
 								<>
-									<p>
+									<p className="card__item">
 										<b>Attribute: </b>
 										{JSON.stringify(card.attribute)}
 									</p>
-									<p>
+									<p className="card__item">
 										<b>Level: </b>
 										{JSON.stringify(card.level)}
 										&nbsp;
-										<img src="monsterLevelImg.png" alt="monster card level" />
+										<img
+											className="monsterLevelImage"
+											src="monsterLevelImg.png"
+											alt="monster card level"
+										/>
 									</p>
-									<p>
+									<p className="card__item">
 										<b>ATK: </b>
 										{JSON.stringify(card.atk)}
 										<b>/ DEF: </b>
@@ -64,10 +67,11 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 							) : (
 								<></>
 							)}
-							<p>
-								<span>Card text: </span>
+							<p className="card__item card__item__cardText">
+								<b>Card text: </b>
 								{JSON.stringify(card.desc)}
 							</p>
+							<button className="card__button">Add to deck</button>
 						</div>
 					);
 				} else {

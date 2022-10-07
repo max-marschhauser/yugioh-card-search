@@ -1,5 +1,6 @@
 .container--filter {
 	position: sticky;
+	top: 4.2rem;
 	z-index: 1;
 
 	display: flex;
@@ -10,6 +11,11 @@
 	padding-block: 0.5rem;
 
 	background-color: var(--color-gray);
+
+	::selection {
+		background-color: var(--color-lightgray);
+		color: var(--color-gray);
+	}
 
 	&--column {
 		display: flex;
@@ -61,7 +67,7 @@
 }
 
 .container--search {
-	min-height: 62.71vh;
+	min-height: 66.9vh;
 	background-color: var(--color-lightgray);
 
 	padding: 1rem;

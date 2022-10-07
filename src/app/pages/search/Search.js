@@ -8,8 +8,7 @@ import "./search.scss";
 let searchForTypes = [];
 
 export default function Search() {
-	const [searchName, setSearchName] = useState("");
-	const [effectRaceSearch, setEffectRaceSearch] = useState("");
+	const [searchWord, setSearchWord] = useState("");
 
 	const [type, setType] = useState(
 		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
@@ -22,7 +21,7 @@ export default function Search() {
 		setLoading(true);
 		axios
 			.get(
-				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${type}fname=${searchName}&sort=${sort}&startdate=01/01/2001&enddate=1/1/2008&misc=yes`
+				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${type}&sort=${sort}&startdate=01/01/2001&enddate=1/1/2008&misc=yes`
 			)
 			.then((response) => {
 				setLoading(false);
@@ -33,7 +32,7 @@ export default function Search() {
 					"There is no such card in database, change your search options. Please notice that this version of application only includes TCG Yu-Gi-Oh cards released until 1. 1. 2008. We are planing to add more cards in newer versions of app."
 				);
 			});
-	}, [searchName, sort, type]);
+	}, [sort, type]);
 
 	function changeSearchType(searchValue) {
 		let searchText = "";
@@ -77,23 +76,14 @@ export default function Search() {
 		<>
 			<form className="container--filter">
 				<div className="container--filter--column">
-					<label htmlFor="cardName">Card name:</label>
+					<label htmlFor="searchWord">Name / Card effect / Card type:</label>
 					<input
 						type="text"
-						id="cardName"
-						name="cardName"
-						value={searchName}
-						placeholder="search by card name"
-						onChange={(e) => setSearchName(e.target.value)}
-					/>
-					<label htmlFor="effectRaceText">Card effect / Card type:</label>
-					<input
-						type="text"
-						id="effectRaceText"
-						name="effectRaceText"
-						value={effectRaceSearch}
-						placeholder="search by effect or type"
-						onChange={(e) => setEffectRaceSearch(e.target.value)}
+						id="searchWord"
+						name="searchWord"
+						value={searchWord}
+						placeholder="search cards"
+						onChange={(e) => setSearchWord(e.target.value)}
 					/>
 				</div>
 				<fieldset>
@@ -209,7 +199,7 @@ export default function Search() {
 				</fieldset>
 			</form>
 			<div className="container--search">
-				{loading ? <LoadingSpinner /> : <DisplayCards items={items} effectRaceSearch={effectRaceSearch} />}
+				{loading ? <LoadingSpinner /> : <DisplayCards items={items} searchWord={searchWord} />}
 			</div>
 		</>
 	);

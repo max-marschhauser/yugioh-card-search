@@ -6,12 +6,12 @@
 	--color-white: hsl(0, 0%, 100%);
 	--color-black: hsl(0, 0%, 0%);
 
-	--color-primary-monster-normal: hsl(65, 100%, 40%);
+	--color-primary-monster-normal: hsl(60, 80%, 35%);
 	--color-primary-monster-effect: hsl(20, 100%, 25%);
-	--color-primary-monster-ritual: hsl(222, 100%, 34%);
-	--color-primary-monster-fusion: hsl(291, 100%, 31%);
-	--color-primary-spell: hsl(120, 70%, 50%);
-	--color-primary-trap: hsl(334, 40%, 25%);
+	--color-primary-monster-ritual: hsl(220, 60%, 50%);
+	--color-primary-monster-fusion: hsl(290, 100%, 25%);
+	--color-primary-spell: hsl(120, 70%, 40%);
+	--color-primary-trap: hsl(330, 45%, 40%);
 
 	font-family: "Montserrat", sans-serif;
 }
@@ -28,4 +28,20 @@
 
 body {
 	background-color: var(--color-lightgray);
+}
+
+::-webkit-scrollbar {
+	width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-lightgray);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-gray);
+
+	&:hover {
+		background: var(--color-black);
+	}
 }
