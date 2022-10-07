@@ -1,9 +1,10 @@
 .spinner {
 	z-index: 1;
 	position: relative;
+	left: 50%;
 
-	width: 10rem;
-	height: 10rem;
+	width: 15rem;
+	height: 15rem;
 
 	display: grid;
 	place-items: center;
@@ -62,7 +63,7 @@
 
 @keyframes text-color {
 	0% {
-		color: var(--color-lightgray);
+		color: var(--color-gray);
 	}
 
 	100% {
