@@ -22,7 +22,7 @@ export default function Search() {
 		setLoading(true);
 		axios
 			.get(
-				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${type}fname=${searchName}&sort=${sort}&startdate=01/01/1999&enddate=1/1/2008&dateregion=tcg_date`
+				`https://db.ygoprodeck.com/api/v7/cardinfo.php?${type}fname=${searchName}&sort=${sort}&startdate=01/01/2001&enddate=1/1/2008&misc=yes`
 			)
 			.then((response) => {
 				setLoading(false);
@@ -134,7 +134,7 @@ export default function Search() {
 								type="checkbox"
 								id="fusionMonster"
 								name="type"
-								value="Ritual Effect Monster,Ritual Monster,Fusion Monster"
+								value="Fusion Monster"
 								onChange={(e) => changeSearchType(e.target.value)}
 							/>
 							<label htmlFor="fusionMonster">Fusion Monster</label>

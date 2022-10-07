@@ -2,6 +2,7 @@ import React from "react";
 import "./displayCards.scss";
 
 export default function DisplayCards({ items, effectRaceSearch }) {
+	console.log(items.length);
 	return (
 		<>
 			{items.map((card) => {
@@ -19,8 +20,19 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 									? "card spellCard"
 									: card.type === "Trap Card"
 									? "card trapCard"
-									: card.type.includes("Monster")
-									? "card monsterCard"
+									: card.type === "Normal Monster"
+									? "card monsterCardNormal"
+									: card.type === "Ritual Monster" || card.type === "Ritual Effect Monster"
+									? "card monsterCardRitual"
+									: card.type === "Fusion Monster"
+									? "card monsterCardFusion"
+									: card.type === "Effect Monster" ||
+									  card.type === "Flip Effect Monster" ||
+									  card.type === "Gemini Monster" ||
+									  card.type === "Spirit Monster" ||
+									  card.type === "Toon Monster" ||
+									  card.type === "Union Effect Monster"
+									? "card monsterCardEffect"
 									: "card"
 							}>
 							<p>
@@ -28,25 +40,25 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 							</p>
 							<p>{JSON.stringify(card.type)}</p>
 							<p>
-								<span>Type: </span>
+								<b>Type: </b>
 								{JSON.stringify(card.race)}
 							</p>
 							{JSON.stringify(card.type).includes("Monster") ? (
 								<>
 									<p>
-										<span>Attribute: </span>
+										<b>Attribute: </b>
 										{JSON.stringify(card.attribute)}
 									</p>
 									<p>
-										<span>Level: </span>
+										<b>Level: </b>
 										{JSON.stringify(card.level)}
 										&nbsp;
 										<img src="monsterLevelImg.png" alt="monster card level" />
 									</p>
 									<p>
-										<span>ATK: </span>
+										<b>ATK: </b>
 										{JSON.stringify(card.atk)}
-										<span> / DEF: </span>
+										<b> / DEF: </b>
 										{JSON.stringify(card.def)}
 									</p>
 								</>
@@ -54,7 +66,7 @@ export default function DisplayCards({ items, effectRaceSearch }) {
 								<></>
 							)}
 							<p>
-								<span>Effect: </span>
+								<span>Card text: </span>
 								{JSON.stringify(card.desc)}
 							</p>
 						</div>
