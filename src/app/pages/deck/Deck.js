@@ -1,5 +1,6 @@
 import React from "react";
 import DisplayDeck from "../../components/displayDeck/DisplayDeck";
+import "./deck.scss";
 
 export default function Deck() {
 	const LOCAL_STORAGE_KEY = "myDeck";
