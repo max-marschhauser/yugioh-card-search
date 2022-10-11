@@ -1,8 +1,11 @@
 .container--page {
-	min-height: 83vh;
 	padding: 1rem;
 	width: 100vw;
 
 	display: grid;
 	place-items: center;
+
+	overflow: hidden;
+
+	text-align: center;
 }

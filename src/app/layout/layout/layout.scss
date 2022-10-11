@@ -1,5 +1,12 @@
 @use "../../assets/abstracts/" as abs;
 
+.pageContainer {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .navbar {
 	position: sticky;
 	top: 0;

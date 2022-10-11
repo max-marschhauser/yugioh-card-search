@@ -2,6 +2,7 @@ import React from "react";
 import "./home.scss";
 
 export default function Home() {
+	/*
 	return (
 		<>
 			<div className="container--page hero">
@@ -14,5 +15,5 @@ export default function Home() {
 				</div>
 			</div>
 		</>
-	);
+	);*/
 }

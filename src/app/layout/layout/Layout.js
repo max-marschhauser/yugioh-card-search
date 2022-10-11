@@ -4,7 +4,7 @@ import "./layout.scss";
 
 const Navbar = () => {
 	return (
-		<>
+		<div className="pageContainer">
 			<nav className="navbar">
 				<NavLink to="/" end>
 					Home
@@ -14,7 +14,7 @@ const Navbar = () => {
 			</nav>
 			<Outlet />
 			<Footer />
-		</>
+		</div>
 	);
 };
 
