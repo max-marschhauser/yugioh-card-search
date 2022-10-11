@@ -3,17 +3,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import DisplayCards from "../../components/displayCards/DisplayCards";
-import "./search.scss";
 import changeSearchType from "../../utils/changeSearchType";
+import "./search.scss";
 
 export default function Search() {
 	const [items, setItems] = useState([]);
 
 	const [searchWord, setSearchWord] = useState("");
+	const [sort, setSort] = useState("name");
 	const [type, setType] = useState(
 		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
 	);
-	const [sort, setSort] = useState("name");
 
 	const [loading, setLoading] = useState(true);
 
@@ -43,7 +43,6 @@ export default function Search() {
 						type="text"
 						id="searchWord"
 						name="searchWord"
-						value={searchWord}
 						placeholder="search cards"
 						onChange={(e) => setSearchWord(e.target.value)}
 					/>
