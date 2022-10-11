@@ -17,7 +17,9 @@ export default function Footer() {
 			<div>
 				<span>&nbsp;e-mail:&nbsp;</span>
 				<br />
-				max.marschhauser@gmail.com
+				max.marschhauser
+				<wbr />
+				@gmail.com
 			</div>
 		</footer>
 	);

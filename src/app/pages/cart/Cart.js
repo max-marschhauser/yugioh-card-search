@@ -6,6 +6,7 @@ import "./cart.scss";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 export default function Deck() {
+	/*
 	const LOCAL_STORAGE_KEY = "myDeck";
 	let myDeck = localStorage.getItem(LOCAL_STORAGE_KEY);
 	let selectedCards = [];
@@ -49,5 +50,5 @@ export default function Deck() {
 			</div>
 			;
 		</>
-	);
+	);*/
 }
