@@ -2,12 +2,11 @@ import React from "react";
 import "./home.scss";
 
 export default function Home() {
-	/*
 	return (
 		<>
 			<div className="container--page hero">
 				<img className="hero__item" src="./heroImage.jpg" alt="hero" />
-				<div className="hero__item">
+				<div className="hero__item hero__text">
 					<h1>Yu-Gi-Oh! Database</h1>
 					<p>Search for your favorite cards</p>
 					<p>Create the ultimate deck</p>
@@ -15,5 +14,5 @@ export default function Home() {
 				</div>
 			</div>
 		</>
-	);*/
+	);
 }

@@ -1,3 +1,5 @@
+@use "../../assets/abstracts" as abs;
+
 .hero {
 	::selection {
 		background: var(--color-lightgray);
@@ -14,18 +16,30 @@
 	}
 
 	img {
-		height: 100%;
+		max-width: 100%;
+		height: 75vh;
+		object-fit: cover;
+
 		box-shadow: 0 0 0.2rem 0.2rem var(--color-black);
 
 		user-select: none;
 	}
 
-	div {
+	&__text {
 		box-shadow: 0 0 0.2rem 0.2rem var(--color-white) inset;
 
 		background-color: var(--color-black);
 		opacity: 0.8;
-		padding: 2rem 6rem;
+
+		padding: 2rem 0.5rem;
+
+		@include abs.mq(475px, 0px) {
+			padding: 2rem 3rem;
+		}
+
+		@include abs.mq(600px, 0px) {
+			padding: 2rem 6rem;
+		}
 	}
 
 	h1,
