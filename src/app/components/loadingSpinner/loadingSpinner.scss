@@ -1,8 +1,26 @@
+@use "../../assets/abstracts" as abs;
+
 .spinner {
 	z-index: 1;
 	position: relative;
 	top: -10%;
-	left: 50%;
+	left: 0%;
+
+	@include abs.mq(600px, 0px) {
+		left: 50%;
+	}
+
+	@include abs.mq(800px, 0px) {
+		left: 100%;
+	}
+
+	@include abs.mq(1000px, 0px) {
+		left: 150%;
+	}
+
+	@include abs.mq(1400px, 0px) {
+		left: 200%;
+	}
 
 	width: 15rem;
 	height: 15rem;
