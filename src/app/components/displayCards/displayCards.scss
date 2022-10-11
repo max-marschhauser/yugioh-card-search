@@ -57,10 +57,16 @@
 
 		cursor: pointer;
 
+		transition: all 0.2s ease;
+
 		&:hover,
 		&:focus-visible {
 			background-color: var(--color-lightgray);
 			box-shadow: 0rem 0rem 0.5rem 0.1rem var(--color-black);
+		}
+
+		&:active {
+			opacity: 0.8;
 		}
 	}
 }

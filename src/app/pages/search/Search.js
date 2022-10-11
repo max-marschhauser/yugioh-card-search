@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import DisplayCards from "../../components/displayCards/DisplayCards";
-import changeSearchType from "../../utils/changeSearchType";
 import "./search.scss";
+import changeSearchType from "../../utils/changeSearchType";
 
 export default function Search() {
 	const [items, setItems] = useState([]);
@@ -159,10 +159,10 @@ export default function Search() {
 					</div>
 				</fieldset>
 			</form>
-
 			<div className="container--search">
 				{loading ? <LoadingSpinner /> : <DisplayCards items={items} searchWord={searchWord} />}
 			</div>
+			;
 		</>
 	);
 }
