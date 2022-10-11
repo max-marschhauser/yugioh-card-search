@@ -4,10 +4,7 @@
     -   remove cards from deck
     -   deck price and buy cards
 
-local storage and useEffect
-
 To use localStorage in your web applications, there are five methods to choose from:
-
 setItem(): Add key and value to localStorage
 getItem(): This is how you get items from localStorage
 removeItem(): Remove an item by key from localStorage
