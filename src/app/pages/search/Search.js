@@ -34,7 +34,7 @@ export default function Search() {
 
 	return (
 		<>
-			<FilterForm searchChanger={setSearchWord} typeChanger={setType} sortChanger={setSort} />
+			<FilterForm searchChanger={setSearchWord} typeChanger={setType} sortChanger={setSort} />;
 			<div className="container--search">
 				{loading ? <LoadingSpinner /> : <DisplayCards items={items} searchWord={searchWord} />}
 			</div>

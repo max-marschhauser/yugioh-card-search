@@ -1,5 +1,6 @@
 import React from "react";
 import changeSearchType from "../../utils/changeSearchType";
+import "./filterForm.scss";
 
 export default function FilterForm({ searchChanger, typeChanger, sortChanger }) {
 	return (

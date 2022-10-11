@@ -1,0 +1,91 @@
+@use "../../assets/abstracts" as abs;
+
+.container--filter {
+	top: 4.25rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	gap: 1rem;
+
+	padding-block: 1.5rem;
+
+	@include abs.mq(1000px, 0px) {
+		flex-direction: row;
+
+		padding-block: 0.5rem;
+	}
+
+	background-color: var(--color-gray);
+
+	::selection {
+		background-color: var(--color-lightgray);
+		color: var(--color-gray);
+	}
+
+	&--column {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&--fieldset {
+		display: grid;
+
+		grid-template-columns: repeat(1, 1fr);
+
+		@include abs.mq(500px, 0px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		gap: 0.5rem;
+	}
+
+	label {
+		font-size: 1.1rem;
+
+		@include abs.mq(1000px, 0px) {
+			font-size: 1.2rem;
+		}
+
+		color: var(--color-lightgray);
+		text-align: center;
+
+		cursor: pointer;
+	}
+
+	.noPointer {
+		cursor: default;
+	}
+
+	legend {
+		padding-block: 0.5rem;
+
+		font-size: 1.5rem;
+		text-align: center;
+		color: var(--color-lightgray);
+
+		cursor: default;
+	}
+
+	input {
+		max-width: min(20rem, 90vw);
+		margin: 0.5rem;
+		padding: 0.25rem;
+
+		background-color: var(--color-lightgray);
+		caret-color: var(--color-primary-spell);
+		accent-color: var(--color-primary-spell);
+
+		color: var(--color-black);
+		font-size: 1.5rem;
+
+		&[type="checkbox"],
+		&[type="radio"] {
+			cursor: pointer;
+		}
+	}
+}
