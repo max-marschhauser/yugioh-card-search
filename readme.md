@@ -1,3 +1,7 @@
+-   search page
+
+    -   staviti filter container s lijeve strane kad je širina veća od 1200px (umjesto jednog reda karata)
+
 -   cart page
     -   u navbaru staviti broj koji govori koliko je karata u cartu
         -   oznaka količina kupljenih karata
