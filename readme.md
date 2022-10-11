@@ -1,11 +1,11 @@
 -   search page
 
     -   remove \n \r \" from card effects
-    -   oznaka koliko je te karte već u deku, a ako je 3 onda staviti alert da se više karata ne može staviti
+    -   oznaka količina kupljenih karata
     -   uz add to deck staviti i tipku remove from deck
     -   card price
 
--   deck page
+-   cart page
     -   u navbaru staviti broj koji govori koliko je karata u cartu
     -   add / remove cards from cart
     -   buy cards tipka

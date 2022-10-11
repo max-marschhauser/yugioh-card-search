@@ -2,8 +2,6 @@
 
 .container--search {
 	min-height: 62vh;
-	background-color: var(--color-lightgray);
-
 	padding: 1rem;
 
 	display: grid;
@@ -27,4 +25,6 @@
 
 	place-items: center;
 	gap: 1rem;
+
+	background-color: var(--color-lightgray);
 }
