@@ -1,12 +1,6 @@
--   search page
-
-    -   remove \n \r \" from card effects
-    -   oznaka količina kupljenih karata
-    -   uz add to deck staviti i tipku remove from deck
-    -   card price
-
 -   cart page
     -   u navbaru staviti broj koji govori koliko je karata u cartu
+        -   oznaka količina kupljenih karata
     -   add / remove cards from cart
     -   buy cards tipka
 

@@ -1,19 +1,9 @@
 import React from "react";
+import addCardToCart from "../../utils/addCardToCart";
 import "./displayCards.scss";
-
-let deck = [];
 
 export default function DisplayCards({ items, searchWord }) {
 	let keyWord = searchWord.toUpperCase();
-	const LOCAL_STORAGE_KEY = "myDeck";
-
-	function addToDeck(card) {
-		let parent = card.target.parentElement;
-		let name = parent.querySelector("[data-id]");
-		let cardId = parseInt(name.dataset.id);
-		deck.push(cardId);
-		localStorage.setItem(LOCAL_STORAGE_KEY, deck);
-	}
 
 	return (
 		<>
@@ -21,6 +11,9 @@ export default function DisplayCards({ items, searchWord }) {
 				let cardEffect = card.desc.toUpperCase();
 				let cardRace = card.race.toUpperCase();
 				let cardName = card.name.toUpperCase();
+				if (card.attribute) {
+					let cardAttribute = card.attribute.toUpperCase(); // dodati da se pretražuje i po attributu karte, možda da se odvojeno u if statementu pretražuju spellovi i trapovi, a odvojeno čudovišta
+				}
 
 				if (cardEffect.includes(keyWord) || cardRace.includes(keyWord) || cardName.includes(keyWord)) {
 					return (
@@ -47,22 +40,22 @@ export default function DisplayCards({ items, searchWord }) {
 									: "card"
 							}>
 							<header className="card__title" data-id={card.id}>
-								{JSON.stringify(card.name)}
+								{card.name}
 							</header>
-							<p className="card__type">{JSON.stringify(card.type)}</p>
+							<p className="card__type">{card.type}</p>
 							<p className="card__item">
 								<b>Type: </b>
-								{JSON.stringify(card.race)}
+								{card.race}
 							</p>
-							{JSON.stringify(card.type).includes("Monster") ? (
+							{card.type.includes("Monster") ? (
 								<>
 									<p className="card__item">
 										<b>Attribute: </b>
-										{JSON.stringify(card.attribute)}
+										{card.attribute}
 									</p>
 									<p className="card__item">
 										<b>Level: </b>
-										{JSON.stringify(card.level)}
+										{card.level}
 										&nbsp;
 										<img
 											className="monsterLevelImage"
@@ -72,9 +65,9 @@ export default function DisplayCards({ items, searchWord }) {
 									</p>
 									<p className="card__item">
 										<b>ATK: </b>
-										{JSON.stringify(card.atk)}
+										{card.atk}
 										<b>/ DEF: </b>
-										{JSON.stringify(card.def)}
+										{card.def}
 									</p>
 								</>
 							) : (
@@ -82,10 +75,13 @@ export default function DisplayCards({ items, searchWord }) {
 							)}
 							<p className="card__item card__item__cardText">
 								<b>Card text: </b>
-								{JSON.stringify(card.desc)}
+								{card.desc}
 							</p>
-							<button className="card__button" onClick={addToDeck}>
-								Add to deck
+							<p className="card__item">
+								<b>Price: </b> {card.card_prices[0].ebay_price} €
+							</p>
+							<button className="card__button" onClick={addCardToCart}>
+								Add to cart
 							</button>
 						</div>
 					);
