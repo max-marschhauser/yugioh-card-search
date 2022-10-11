@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayDeck from "../../components/displayDeck/DisplayDeck";
-import "./deck.scss";
+import "./cart.scss";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 export default function Deck() {

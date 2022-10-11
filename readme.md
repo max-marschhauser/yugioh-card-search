@@ -6,7 +6,6 @@
     -   card price
 
 -   deck page
-    -   preimenovati deck page u Cart
     -   u navbaru staviti broj koji govori koliko je karata u cartu
     -   add / remove cards from cart
     -   buy cards tipka
