@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -6,7 +7,6 @@ import "./cart.scss";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 export default function Deck() {
-	/*
 	const LOCAL_STORAGE_KEY = "myDeck";
 	let myDeck = localStorage.getItem(LOCAL_STORAGE_KEY);
 	let selectedCards = [];
@@ -50,5 +50,12 @@ export default function Deck() {
 			</div>
 			;
 		</>
-	);*/
+	);
+}
+*/
+
+import React from "react";
+
+export default function Cart() {
+	return <div></div>;
 }

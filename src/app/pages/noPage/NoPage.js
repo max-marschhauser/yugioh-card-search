@@ -10,7 +10,7 @@ export default function NoPage() {
 		setTimeout(() => {
 			navigate("/");
 		}, 3000);
-	}, []);
+	});
 
 	return (
 		<div className="container--page">
