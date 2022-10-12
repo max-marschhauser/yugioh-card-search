@@ -69,3 +69,32 @@
 		color: var(--color-black);
 	}
 }
+
+.backToTopButton {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+
+	padding: 1rem;
+	border-radius: 100vmax;
+
+	background-color: var(--color-white);
+	box-shadow: 0rem 0rem 0.5rem 0.1rem var(--color-gray);
+
+	text-decoration: none;
+	color: var(--color-black);
+	font-size: 1.2rem;
+	font-weight: bold;
+
+	transition: all 0.2s ease;
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--color-lightgray);
+		box-shadow: 0rem 0rem 0.5rem 0.1rem var(--color-black);
+	}
+
+	&:active {
+		opacity: 0.9;
+	}
+}
