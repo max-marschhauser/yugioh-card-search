@@ -1,8 +1,15 @@
+@use "../../assets/abstracts" as abs;
+
 .card {
-	position: relative;
 	padding: 1rem;
 	width: 100%;
-	height: 25rem;
+
+	height: 28rem;
+
+	@include abs.mq(500px, 0px) {
+		height: 25rem;
+	}
+
 	overflow-y: auto;
 
 	outline: 0.1rem solid var(--color-black);
@@ -16,7 +23,8 @@
 	}
 
 	.monsterLevelImage {
-		position: absolute;
+		position: relative;
+		top: 0.1rem;
 		height: 1rem;
 	}
 
@@ -37,8 +45,9 @@
 		font-size: 1.1rem;
 	}
 
-	&__cardText {
-		text-justify: distribute;
+	.cardText {
+		text-align: justify;
+		text-justify: inter-word;
 	}
 
 	&__button {
@@ -73,6 +82,8 @@
 
 .monsterCardNormal {
 	background-color: var(--color-primary-monster-normal);
+
+	color: var(--color-dark);
 }
 
 .monsterCardEffect {
@@ -89,6 +100,8 @@
 
 .spellCard {
 	background-color: var(--color-primary-spell);
+
+	color: var(--color-dark);
 }
 
 .trapCard {

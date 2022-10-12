@@ -1,7 +1,3 @@
-// items su sve karte sa url linka, a selectedCards je array s id-ovima karata u deku
-
-import "./displayDeck.scss";
-
 export default function DisplayDeck({ items, selectedCards }) {
 	console.log(selectedCards);
 

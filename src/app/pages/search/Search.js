@@ -9,7 +9,7 @@ import "./search.scss";
 export default function Search() {
 	const [items, setItems] = useState([]);
 
-	const [searchWord, setSearchWord] = useState("");
+	const [searchWord, setSearchWord] = useState("toon");
 	const [sort, setSort] = useState("name");
 	const [type, setType] = useState(
 		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
