@@ -43,7 +43,16 @@ export default function Cart() {
 
 		return (
 			<div className="container--cart">
-				{loading ? <LoadingSpinnerCart /> : <DisplayCart items={items} cartArray={cartArray} />}
+				{loading ? (
+					<LoadingSpinnerCart />
+				) : (
+					<>
+						<div className="cart__items">
+							<DisplayCart className="cart" items={items} cartArray={cartArray} />
+						</div>
+						<div className="cart__information">Total and Purchase button</div>
+					</>
+				)}
 			</div>
 		);
 	}

@@ -6,6 +6,10 @@
 	top: -10%;
 	left: 0%;
 
+	@include abs.mq(1000px, 0px) {
+		left: 50%;
+	}
+
 	width: 15rem;
 	height: 15rem;
 
