@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import LoadingSpinnerSearch from "../../components/loadingSpinnerSearch/LoadingSpinnerSearch";
 import DisplayCards from "../../components/displayCards/DisplayCards";
 import FilterForm from "../../components/filterForm/FilterForm";
 import "./search.scss";
@@ -36,7 +36,7 @@ export default function Search() {
 		<>
 			<FilterForm searchChanger={setSearchWord} typeChanger={setType} sortChanger={setSort} />
 			<div className="container--search">
-				{loading ? <LoadingSpinner /> : <DisplayCards items={items} searchWord={searchWord} />}
+				{loading ? <LoadingSpinnerSearch /> : <DisplayCards items={items} searchWord={searchWord} />}
 			</div>
 		</>
 	);

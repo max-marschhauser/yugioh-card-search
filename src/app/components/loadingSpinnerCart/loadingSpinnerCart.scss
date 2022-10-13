@@ -1,26 +1,10 @@
 @use "../../assets/abstracts" as abs;
 
-.spinner {
+.spinner--cart {
 	z-index: 1;
 	position: relative;
 	top: -10%;
 	left: 0%;
-
-	@include abs.mq(600px, 0px) {
-		left: 50%;
-	}
-
-	@include abs.mq(800px, 0px) {
-		left: 100%;
-	}
-
-	@include abs.mq(1000px, 0px) {
-		left: 150%;
-	}
-
-	@include abs.mq(1400px, 0px) {
-		left: 200%;
-	}
 
 	width: 15rem;
 	height: 15rem;
@@ -41,7 +25,7 @@
 	cursor: default;
 }
 
-.spinner__sector {
+.spinner--cart__sector {
 	position: absolute;
 	width: 80%;
 	height: 80%;
@@ -52,19 +36,19 @@
 	pointer-events: none;
 }
 
-.spinner__sector--red {
+.spinner--cart__sector--red {
 	border-top-color: var(--color-primary-monster-effect);
 	--duration: 2.5s;
 	--timing-function: ease;
 }
 
-.spinner__sector--green {
+.spinner--cart__sector--green {
 	border-top-color: var(--color-primary-spell);
 	--duration: 2s;
 	--timing-function: linear;
 }
 
-.spinner__sector--blue {
+.spinner--cart__sector--blue {
 	border-top-color: var(--color-primary-trap);
 	--duration: 1.5s;
 	--timing-function: ease-in-out;

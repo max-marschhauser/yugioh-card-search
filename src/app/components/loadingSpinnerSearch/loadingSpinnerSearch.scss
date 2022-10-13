@@ -1,0 +1,91 @@
+@use "../../assets/abstracts" as abs;
+
+.spinner--search {
+	z-index: 1;
+	position: relative;
+	top: -10%;
+	left: 0%;
+
+	@include abs.mq(600px, 0px) {
+		left: 50%;
+	}
+
+	@include abs.mq(800px, 0px) {
+		left: 100%;
+	}
+
+	@include abs.mq(1000px, 0px) {
+		left: 150%;
+	}
+
+	@include abs.mq(1400px, 0px) {
+		left: 200%;
+	}
+
+	width: 15rem;
+	height: 15rem;
+
+	display: grid;
+	place-items: center;
+
+	font-size: 2rem;
+	overflow: hidden;
+
+	animation-name: text-color;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+
+	cursor: default;
+}
+
+.spinner--search__sector {
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	border: 1rem solid transparent;
+
+	animation: rotate var(--duration) var(--timing-function) infinite;
+	pointer-events: none;
+}
+
+.spinner--search__sector--red {
+	border-top-color: var(--color-primary-monster-effect);
+	--duration: 2.5s;
+	--timing-function: ease;
+}
+
+.spinner--search__sector--green {
+	border-top-color: var(--color-primary-spell);
+	--duration: 2s;
+	--timing-function: linear;
+}
+
+.spinner--search__sector--blue {
+	border-top-color: var(--color-primary-trap);
+	--duration: 1.5s;
+	--timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes text-color {
+	0% {
+		color: var(--color-gray);
+	}
+
+	100% {
+		color: var(--color-black);
+	}
+}
