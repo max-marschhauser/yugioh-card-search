@@ -48,9 +48,17 @@ export default function Cart() {
 				) : (
 					<>
 						<div className="cart__items">
-							<DisplayCart className="cart" items={items} cartArray={cartArray} />
+							<div className="cart__items__item cart__heading">
+								<b>Name</b>
+								<b>Card Type</b>
+								<b>Type</b>
+								<b>Price</b>
+								<b>Quantity</b>
+								<b>Remove</b>
+							</div>
+							<DisplayCart items={items} cartArray={cartArray} />
 						</div>
-						<div className="cart__information">Total and Purchase button</div>
+						<div className="cart__purchase">Total and Purchase button</div>
 					</>
 				)}
 			</div>

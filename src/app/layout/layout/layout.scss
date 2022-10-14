@@ -21,6 +21,8 @@
 
 	background-color: var(--color-black);
 
+	user-select: none;
+
 	& > * {
 		position: relative;
 
