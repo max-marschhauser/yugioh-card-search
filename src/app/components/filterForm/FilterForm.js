@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useId } from "react";
 import changeSearchType from "../../utils/changeSearchType";
 import "./filterForm.scss";
 
 export default function FilterForm({ searchChanger, typeChanger, sortChanger }) {
+	const id = useId();
+
 	return (
 		<form className="container--filter">
 			<div className="container--filter--column">
-				<label className="noPointer" htmlFor="searchWord">
+				<label className="noPointer" htmlFor={`${id}-searchWord`}>
 					Name / Card effect / Card type:
 				</label>
 				<input
 					type="text"
-					id="searchWord"
+					id={`${id}-searchWord`}
 					name="searchWord"
 					placeholder="search cards"
 					onChange={(e) => searchChanger(e.target.value)}
@@ -23,62 +25,62 @@ export default function FilterForm({ searchChanger, typeChanger, sortChanger }) 
 					<div>
 						<input
 							type="checkbox"
-							id="normalMonster"
+							id={`${id}-normalMonster`}
 							name="type"
 							value="Normal Monster"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="normalMonster">Normal Monster</label>
+						<label htmlFor={`${id}-normalMonster`}>Normal Monster</label>
 					</div>
 					<div>
 						<input
 							type="checkbox"
-							id="effectMonster"
+							id={`${id}-effectMonster`}
 							name="type"
 							value="Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="effectMonster">Effect Monster</label>
+						<label htmlFor={`${id}-effectMonster`}>Effect Monster</label>
 					</div>
 					<div>
 						<input
 							type="checkbox"
-							id="ritualMonster"
+							id={`${id}-ritualMonster`}
 							name="type"
 							value="Ritual Effect Monster,Ritual Monster"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="ritualMonster">Ritual Monster</label>
+						<label htmlFor={`${id}-ritualMonster`}>Ritual Monster</label>
 					</div>
 					<div>
 						<input
 							type="checkbox"
-							id="fusionMonster"
+							id={`${id}-fusionMonster`}
 							name="type"
 							value="Fusion Monster"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="fusionMonster">Fusion Monster</label>
+						<label htmlFor={`${id}-fusionMonster`}>Fusion Monster</label>
 					</div>
 					<div>
 						<input
 							type="checkbox"
-							id="spell"
+							id={`${id}-spellCard`}
 							name="type"
 							value="Spell Card"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="spell">Spell</label>
+						<label htmlFor={`${id}-spellCard`}>Spell</label>
 					</div>
 					<div>
 						<input
 							type="checkbox"
-							id="trap"
+							id={`${id}-trapCard`}
 							name="type"
 							value="Trap Card"
 							onChange={(e) => typeChanger(changeSearchType(e.target.value))}
 						/>
-						<label htmlFor="trap">Trap</label>
+						<label htmlFor={`${id}-trapCard`}>Trap</label>
 					</div>
 				</div>
 			</fieldset>
@@ -88,43 +90,43 @@ export default function FilterForm({ searchChanger, typeChanger, sortChanger }) 
 					<div>
 						<input
 							type="radio"
-							id="name"
+							id={`${id}-sortName`}
 							name="sort"
 							value="name"
 							onChange={(e) => sortChanger(e.target.value)}
 							defaultChecked
 						/>
-						<label htmlFor="name">Name</label>
+						<label htmlFor={`${id}-sortName`}>Name</label>
 					</div>
 					<div>
 						<input
 							type="radio"
-							id="atk"
+							id={`${id}-sortAtk`}
 							name="sort"
 							value="atk"
 							onChange={(e) => sortChanger(e.target.value)}
 						/>
-						<label htmlFor="atk">Atk</label>
+						<label htmlFor={`${id}-sortAtk`}>Atk</label>
 					</div>
 					<div>
 						<input
 							type="radio"
-							id="def"
+							id={`${id}-sortDef`}
 							name="sort"
 							value="def"
 							onChange={(e) => sortChanger(e.target.value)}
 						/>
-						<label htmlFor="def">Def</label>
+						<label htmlFor={`${id}-sortDef`}>Def</label>
 					</div>
 					<div>
 						<input
 							type="radio"
-							id="level"
+							id={`${id}-sortLevel`}
 							name="sort"
 							value="level"
 							onChange={(e) => sortChanger(e.target.value)}
 						/>
-						<label htmlFor="level">Level</label>
+						<label htmlFor={`${id}-sortLevel`}>Level</label>
 					</div>
 				</div>
 			</fieldset>
