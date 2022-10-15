@@ -28,7 +28,6 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 				<section className="cart__items__item" key={card.id}>
 					<div data-id={card.id}>{card.name}</div>
 					<div>{card.type}</div>
-					<div>{card.race}</div>
 					<div>{card.card_prices[0].ebay_price} €</div>
 					<input className="quantity" type="number" defaultValue={cardQuantity} onChange={quantityChanged} />
 					<button className="removeButton" onClick={RemoveCardFromCart}>

@@ -33,12 +33,11 @@ export default function Cart() {
 				<>
 					<div className="cart__items">
 						<div className="cart__items__item cart__heading">
-							<b>Name</b>
-							<b>Card Type</b>
-							<b>Type</b>
-							<b>Price</b>
-							<b>Quantity</b>
-							<b>Remove</b>
+							<b>NAME</b>
+							<b>TYPE</b>
+							<b>PRICE</b>
+							<b>QUANTITY</b>
+							<b>REMOVE</b>
 						</div>
 						<DisplayCart items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
 					</div>
