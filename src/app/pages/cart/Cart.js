@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LoadingSpinnerCart from "../../components/loadingSpinnerCart/LoadingSpinnerCart";
 import DisplayCart from "../../components/displayCart/DisplayCart";
+import PurchaseSection from "../../components/purchaseSection/PurchaseSection";
 import "./cart.scss";
 
 export default function Cart() {
@@ -41,7 +42,7 @@ export default function Cart() {
 						</div>
 						<DisplayCart items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
 					</div>
-					<div className="cart__purchase">Total and Purchase button</div>
+					<PurchaseSection />
 				</>
 			)}
 		</div>
