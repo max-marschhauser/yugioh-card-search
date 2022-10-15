@@ -20,6 +20,10 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 
 			function quantityChanged(event) {
 				cardQuantity = event.target.value;
+				if (cardQuantity < 1 || isNaN(cardQuantity) === true) {
+					event.target.value = 1;
+					cardQuantity = 1;
+				}
 
 				localStorage.setItem(card.id, cardQuantity);
 			}
