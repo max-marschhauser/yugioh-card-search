@@ -9,6 +9,7 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 
 		const storage = { ...localStorage };
 		useStorageIds(Object.keys(storage));
+		window.dispatchEvent(new Event("storageChanged"));
 	}
 
 	return items.map((card) => {

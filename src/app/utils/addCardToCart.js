@@ -4,4 +4,5 @@ export default function addCardToCart(card) {
 	let cardId = parseInt(name.dataset.id);
 
 	localStorage.setItem(cardId, 1);
+	window.dispatchEvent(new Event("storageChanged"));
 }

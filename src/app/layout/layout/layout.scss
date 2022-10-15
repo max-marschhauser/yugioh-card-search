@@ -57,6 +57,14 @@
 		}
 	}
 
+	&__cart--number {
+		position: absolute;
+		right: 0.35rem;
+
+		font-size: 1rem;
+		color: var(--color-lightgray);
+	}
+
 	.active {
 		border-color: var(--color-white);
 
