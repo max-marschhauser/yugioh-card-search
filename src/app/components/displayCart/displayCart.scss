@@ -9,4 +9,34 @@
 
 	cursor: default;
 	user-select: none;
+
+	.quantity {
+		width: 4rem;
+		border-radius: 100vmax;
+		padding: 0.5rem;
+
+		text-align: center;
+		font-size: 1.5rem;
+	}
+
+	.removeButton {
+		all: unset;
+		padding: 1rem;
+		border-radius: 100vmax;
+		background-color: var(--color-white);
+		color: var(--color-black);
+		cursor: pointer;
+
+		transition: all 0.2s ease;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--color-lightgray);
+			box-shadow: 0rem 0rem 0.5rem 0.1rem var(--color-black);
+		}
+
+		&:active {
+			opacity: 0.9;
+		}
+	}
 }

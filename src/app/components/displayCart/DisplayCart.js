@@ -14,14 +14,24 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 
 	return items.map((card) => {
 		if (storageIdsNum.includes(card.id)) {
+			const storage = { ...localStorage };
+
+			let cardQuantity = storage[card.id];
+
+			function quantityChanged(event) {
+				cardQuantity = event.target.value;
+
+				localStorage.setItem(card.id, cardQuantity);
+			}
+
 			return (
 				<section className="cart__items__item" key={card.id}>
 					<div data-id={card.id}>{card.name}</div>
 					<div>{card.type}</div>
 					<div>{card.race}</div>
 					<div>{card.card_prices[0].ebay_price} €</div>
-					<input type="number" />
-					<button className="card__button" onClick={RemoveCardFromCart}>
+					<input className="quantity" type="number" defaultValue={cardQuantity} onChange={quantityChanged} />
+					<button className="removeButton" onClick={RemoveCardFromCart}>
 						Remove
 					</button>
 				</section>
