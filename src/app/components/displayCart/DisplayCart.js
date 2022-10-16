@@ -15,7 +15,6 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 	return items.map((card) => {
 		if (storageIdsNum.includes(card.id)) {
 			const storage = { ...localStorage };
-
 			let cardQuantity = storage[card.id];
 
 			function quantityChanged(event) {

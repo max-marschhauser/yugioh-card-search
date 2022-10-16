@@ -42,7 +42,7 @@ export default function Cart() {
 						</div>
 						<DisplayCart items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
 					</div>
-					<PurchaseSection />
+					<PurchaseSection items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
 				</>
 			)}
 		</div>
