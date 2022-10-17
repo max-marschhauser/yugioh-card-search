@@ -2,7 +2,7 @@ import React from "react";
 import "./purchaseSection.scss";
 
 export default function PurchaseSection({ items, storageIdsNum, useStorageIds }) {
-	const storage = { ...localStorage };
+	//const storage = { ...localStorage };
 
 	return (
 		<>
