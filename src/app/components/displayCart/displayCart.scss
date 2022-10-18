@@ -1,3 +1,5 @@
+@use "../../assets/abstracts" as abs;
+
 .cart__items__item {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -14,21 +16,39 @@
 	cursor: default;
 	user-select: none;
 
+	font-size: 0.75rem;
+
+	@include abs.mq(1000px, 0px) {
+		font-size: 1rem;
+	}
+
 	.quantity {
-		width: 4rem;
+		width: 3rem;
 		border-radius: 100vmax;
 		padding: 0.5rem;
 
 		text-align: center;
-		font-size: 1.5rem;
+		font-size: 0.75rem;
+
+		@include abs.mq(1000px, 0px) {
+			width: 4rem;
+			font-size: 1.5rem;
+		}
 	}
 
 	.removeButton {
 		all: unset;
-		padding: 1rem;
+		padding: 0.5rem 0.25rem;
 		border-radius: 100vmax;
 		background-color: var(--color-white);
 		color: var(--color-black);
+		font-size: 0.75rem;
+
+		@include abs.mq(1000px, 0px) {
+			padding: 1rem;
+			font-size: 1rem;
+		}
+
 		cursor: pointer;
 
 		transition: all 0.2s ease;
