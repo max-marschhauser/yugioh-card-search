@@ -9,22 +9,25 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 
 		const storage = { ...localStorage };
 		useStorageIds(Object.keys(storage));
+
 		window.dispatchEvent(new Event("storageChanged"));
 	}
 
 	return items.map((card) => {
 		if (storageIdsNum.includes(card.id)) {
-			const storage = { ...localStorage };
+			let storage = { ...localStorage };
 			let cardQuantity = storage[card.id];
 
-			function quantityChanged(event) {
+			function QuantityChanged(event) {
 				cardQuantity = event.target.value;
 				if (cardQuantity < 1 || isNaN(cardQuantity) === true) {
 					event.target.value = 1;
 					cardQuantity = 1;
 				}
 
-				localStorage.setItem(card.id, cardQuantity);
+				localStorage.setItem(card.id, cardQuantity); //set items
+				const storage = { ...localStorage };
+				useStorageIds(Object.keys(storage));
 			}
 
 			return (
@@ -32,7 +35,7 @@ export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
 					<div data-id={card.id}>{card.name}</div>
 					<div>{card.type}</div>
 					<div>{card.card_prices[0].ebay_price} €</div>
-					<input className="quantity" type="number" defaultValue={cardQuantity} onChange={quantityChanged} />
+					<input className="quantity" type="number" defaultValue={cardQuantity} onChange={QuantityChanged} />
 					<button className="removeButton" onClick={RemoveCardFromCart}>
 						Remove
 					</button>
