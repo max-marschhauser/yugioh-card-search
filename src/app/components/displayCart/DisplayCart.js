@@ -1,7 +1,9 @@
 import React from "react";
 import "./displayCart.scss";
 
-export default function DisplayCart({ items, storageIdsNum, useStorageIds }) {
+export default function DisplayCart(props) {
+	const { items, storageIdsNum, useStorageIds } = props;
+
 	function RemoveCardFromCart(card) {
 		let idToRemove = parseInt(card.target.parentElement.querySelector("[data-id]").dataset.id);
 

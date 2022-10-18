@@ -1,7 +1,9 @@
 import React from "react";
 import "./purchaseSection.scss";
 
-export default function PurchaseSection({ items, storageIdsNum, useStorageIds }) {
+export default function PurchaseSection(props) {
+	const { items, storageIdsNum, useStorageIds } = props;
+
 	const storage = { ...localStorage };
 
 	let totalPrice = 0;
