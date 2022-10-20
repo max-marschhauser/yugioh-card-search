@@ -19,14 +19,11 @@
 	place-items: center;
 
 	font-size: 2rem;
-	overflow: hidden;
+	color: var(--color-black);
 
-	animation-name: text-color;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	animation-fill-mode: forwards;
-	animation-direction: alternate;
-	animation-timing-function: ease-in-out;
+	background-color: var(--color-lightgray-transparent);
+
+	overflow: hidden;
 
 	cursor: default;
 }
@@ -49,13 +46,13 @@
 }
 
 .spinner__sector--green {
-	border-top-color: var(--color-primary-spell);
+	border-bottom-color: var(--color-primary-spell);
 	--duration: 2s;
 	--timing-function: linear;
 }
 
 .spinner__sector--blue {
-	border-top-color: var(--color-primary-trap);
+	border-left-color: var(--color-primary-trap);
 	--duration: 1.5s;
 	--timing-function: ease-in-out;
 }
@@ -64,18 +61,7 @@
 	0% {
 		transform: rotate(0);
 	}
-
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-@keyframes text-color {
-	0% {
-		color: var(--color-gray);
-	}
-
-	100% {
-		color: var(--color-black);
 	}
 }

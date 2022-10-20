@@ -19,6 +19,14 @@ export default function Search() {
 		setSearchWord(newWord);
 	}
 
+	function HandleTypeChanger(newType) {
+		setType(newType);
+	}
+
+	function HandleSortChange(newSort) {
+		setSort(newSort);
+	}
+
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -38,7 +46,11 @@ export default function Search() {
 
 	return (
 		<>
-			<FilterForm searchChanger={HandleSearchWord} typeChanger={setType} sortChanger={setSort} />
+			<FilterForm
+				searchChanger={HandleSearchWord}
+				typeChanger={HandleTypeChanger}
+				sortChanger={HandleSortChange}
+			/>
 			<div className="container--search">
 				{loading ? (
 					<div className="container--loading">

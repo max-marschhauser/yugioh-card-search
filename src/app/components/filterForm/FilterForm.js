@@ -2,7 +2,8 @@ import React, { useId } from "react";
 import changeSearchType from "../../utils/changeSearchType";
 import "./filterForm.scss";
 
-export default function FilterForm({ searchChanger, typeChanger, sortChanger }) {
+export default function FilterForm(props) {
+	const { searchChanger, typeChanger, sortChanger } = props;
 	const id = useId();
 
 	return (
