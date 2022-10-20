@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingSpinnerSearch from "../../components/loadingSpinnerSearch/LoadingSpinnerSearch";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import DisplayCards from "../../components/displayCards/DisplayCards";
 import FilterForm from "../../components/filterForm/FilterForm";
 import "./search.scss";
@@ -14,6 +14,10 @@ export default function Search() {
 	const [type, setType] = useState(
 		"type=Normal Monster,Effect Monster,Flip Effect Monster,Gemini Monster,Spirit Monster,Toon Monster,Union Effect Monster,Ritual Effect Monster,Ritual Monster,Fusion Monster,Spell Card,Trap Card&"
 	);
+
+	function HandleSearchWord(newWord) {
+		setSearchWord(newWord);
+	}
 
 	const [loading, setLoading] = useState(true);
 
@@ -34,9 +38,15 @@ export default function Search() {
 
 	return (
 		<>
-			<FilterForm searchChanger={setSearchWord} typeChanger={setType} sortChanger={setSort} />
+			<FilterForm searchChanger={HandleSearchWord} typeChanger={setType} sortChanger={setSort} />
 			<div className="container--search">
-				{loading ? <LoadingSpinnerSearch /> : <DisplayCards items={items} searchWord={searchWord} />}
+				{loading ? (
+					<div className="container--loading">
+						<LoadingSpinner />
+					</div>
+				) : (
+					<DisplayCards items={items} searchWord={searchWord} />
+				)}
 			</div>
 		</>
 	);

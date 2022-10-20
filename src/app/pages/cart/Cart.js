@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import LoadingSpinnerCart from "../../components/loadingSpinnerCart/LoadingSpinnerCart";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import DisplayCart from "../../components/displayCart/DisplayCart";
 import PurchaseSection from "../../components/purchaseSection/PurchaseSection";
 import "./cart.scss";
@@ -33,7 +33,9 @@ export default function Cart() {
 	return (
 		<div className="container--cart">
 			{loading ? (
-				<LoadingSpinnerCart />
+				<div className="container--loading">
+					<LoadingSpinner />
+				</div>
 			) : (
 				<>
 					<div className="cart__items">
