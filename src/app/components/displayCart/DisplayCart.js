@@ -2,7 +2,7 @@ import React from "react";
 import "./displayCart.scss";
 
 export default function DisplayCart(props) {
-	const { items, storageIdsNum, useStorageIds } = props;
+	const { items, storageIdsNum, HandleStorageChange } = props;
 
 	function RemoveCardFromCart(card) {
 		let idToRemove = parseInt(card.target.parentElement.querySelector("[data-id]").dataset.id);
@@ -10,7 +10,7 @@ export default function DisplayCart(props) {
 		localStorage.removeItem(idToRemove);
 
 		const storage = { ...localStorage };
-		useStorageIds(Object.keys(storage));
+		HandleStorageChange(Object.keys(storage));
 
 		window.dispatchEvent(new Event("storageChanged"));
 	}
@@ -27,9 +27,9 @@ export default function DisplayCart(props) {
 					cardQuantity = 1;
 				}
 
-				localStorage.setItem(card.id, cardQuantity); //set items
+				localStorage.setItem(card.id, cardQuantity);
 				const storage = { ...localStorage };
-				useStorageIds(Object.keys(storage));
+				HandleStorageChange(Object.keys(storage));
 			}
 
 			return (

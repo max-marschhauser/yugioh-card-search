@@ -12,6 +12,10 @@ export default function Cart() {
 	const [loading, setLoading] = useState(true);
 	const [items, setItems] = useState([]);
 
+	function HandleStorageChange(newIds) {
+		useStorageIds(newIds);
+	}
+
 	useEffect(() => {
 		setLoading(true);
 		axios
@@ -40,9 +44,17 @@ export default function Cart() {
 							<b>QUANTITY</b>
 							<b>REMOVE</b>
 						</div>
-						<DisplayCart items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
+						<DisplayCart
+							items={items}
+							storageIdsNum={storageIdsNum}
+							HandleStorageChange={HandleStorageChange}
+						/>
 					</div>
-					<PurchaseSection items={items} storageIdsNum={storageIdsNum} useStorageIds={useStorageIds} />
+					<PurchaseSection
+						items={items}
+						storageIdsNum={storageIdsNum}
+						HandleStorageChange={HandleStorageChange}
+					/>
 				</>
 			)}
 		</div>

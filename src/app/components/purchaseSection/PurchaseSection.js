@@ -2,7 +2,7 @@ import React from "react";
 import "./purchaseSection.scss";
 
 export default function PurchaseSection(props) {
-	const { items, storageIdsNum, useStorageIds } = props;
+	const { items, storageIdsNum, HandleStorageChange } = props;
 
 	const storage = { ...localStorage };
 
@@ -20,7 +20,7 @@ export default function PurchaseSection(props) {
 		alert("Thank You for your purchase!");
 		localStorage.clear();
 		const storage = { ...localStorage };
-		useStorageIds(Object.keys(storage));
+		HandleStorageChange(Object.keys(storage));
 	}
 
 	return (

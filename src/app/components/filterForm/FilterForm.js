@@ -12,7 +12,7 @@ export default function FilterForm({ searchChanger, typeChanger, sortChanger }) 
 					Name / Card effect / Card type:
 				</label>
 				<input
-					type="text"
+					type="search"
 					id={`${id}-searchWord`}
 					name="searchWord"
 					placeholder="search cards"
