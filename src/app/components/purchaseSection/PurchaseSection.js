@@ -1,3 +1,5 @@
+// component for displaying purchase section on cart page
+
 import React from "react";
 import "./purchaseSection.scss";
 

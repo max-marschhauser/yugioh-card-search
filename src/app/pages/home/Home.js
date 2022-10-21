@@ -1,3 +1,5 @@
+// home / landing page
+
 import React from "react";
 import "./home.scss";
 

@@ -1,3 +1,5 @@
+// search page, displays filter / search form and filtered items that can be added to the cart
+
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";

@@ -1,3 +1,5 @@
+// component for displaying loading spinner on search and cart page
+
 import React from "react";
 import "./loadingSpinner.scss";
 

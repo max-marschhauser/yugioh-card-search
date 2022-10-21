@@ -1,3 +1,5 @@
+// mixin for media query with minimum width and minimum height
+
 @mixin mq($width, $height) {
 	@media only screen and (min-width: $width) and (min-height: $height) {
 		@content;

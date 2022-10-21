@@ -1,3 +1,5 @@
+// component for displaying cards on search page
+
 import React from "react";
 import addCardToCart from "../../utils/addCardToCart";
 import "./displayCards.scss";

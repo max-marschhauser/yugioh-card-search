@@ -1,3 +1,5 @@
+// page layout and navbar shared on every page
+
 import React, { useEffect, useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import Footer from "../footer/Footer";

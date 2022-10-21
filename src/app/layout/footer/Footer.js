@@ -1,3 +1,5 @@
+// footer shared on every page
+
 import React from "react";
 import "./footer.scss";
 

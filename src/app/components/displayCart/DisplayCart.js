@@ -1,3 +1,5 @@
+// component for displaying cards on cart page
+
 import React from "react";
 import "./displayCart.scss";
 

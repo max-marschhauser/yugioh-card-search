@@ -1,3 +1,5 @@
+// page is displayed if there is no valid url link
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

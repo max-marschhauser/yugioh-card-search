@@ -1,3 +1,5 @@
+// function for adding cards from search page to the local storage
+
 export default function addCardToCart(card) {
 	let parent = card.target.parentElement;
 	let name = parent.querySelector("[data-id]");

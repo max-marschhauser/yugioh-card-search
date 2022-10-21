@@ -1,3 +1,5 @@
+// function for changing search type in filter form on the search page
+
 let searchForTypes = [];
 
 export default function changeSearchType(searchValue) {

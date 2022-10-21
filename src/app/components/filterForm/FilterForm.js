@@ -1,3 +1,5 @@
+// component for displaying filter/search form on search page
+
 import React, { useId } from "react";
 import changeSearchType from "../../utils/changeSearchType";
 import "./filterForm.scss";

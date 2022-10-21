@@ -1,3 +1,5 @@
+// cart page, displays items in cart and purchase section
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
