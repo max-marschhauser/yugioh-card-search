@@ -23,6 +23,8 @@ export default function PurchaseSection(props) {
 		localStorage.clear();
 		const storage = { ...localStorage };
 		HandleStorageChange(Object.keys(storage));
+
+		window.dispatchEvent(new Event("storageChanged"));
 	}
 
 	return (
